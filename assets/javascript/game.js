@@ -139,6 +139,8 @@ const celestial_bodies = [
   let userGuesses = [];
   let randWord;
   let winCounter = 0;
+  let randName = [];
+  let hint = [];
 
 
   //Functions
@@ -150,6 +152,11 @@ const celestial_bodies = [
         // console.log(randWord); 
         //Assign the Name key from random object to randName
     randName = randWord.Name;
+        //Random Facts return
+    // hint = randWord[Math.floor(Math.random() *randWord.length)];
+    // hint = randWord.RandomFact;
+    // console.log(hint);
+    // return hint;
         // console.log(randName);
     for(var i = 0; i < randName.length; i ++) {
         // console.log(i); \
@@ -165,7 +172,7 @@ const celestial_bodies = [
     //HTML
     document.getElementById("guesses-left").textContent = guessesLeft;
   } 
-
+  
 
   //Function for winning or losing, lives in the onkeyup function
   function winLose() {
@@ -174,10 +181,11 @@ const celestial_bodies = [
           startGame();
           wins++;
           underScore = [];
-      } else if (guessesLeft = 0){
+      } else if (guessesLeft < 1){
           alert("You lose!")
           startGame();
-          losses--;
+          loss--;
+          
       }
   }
 
@@ -200,20 +208,19 @@ const celestial_bodies = [
             }
         }
       } else { //Checks if guess is already in wrongAnswer, pushes the wrong letter choices in the wrongLetter array
-        for(var i = 0; i < randName.length; i ++){
-          if(userGuesses.indexOf(wrongLettter) > -1)
+        // for(var i = 0; i < randName.length; i ++){
+          // if(userGuesses.indexOf(wrongLettter) > -1)
           {
             wrongLettter.push(userGuesses);
             document.getElementById("wrong-letters").textContent = wrongLettter.join(" ");
             guessesLeft--;
             winLose();
           }    
-          
-        //   console.log(wrongLettter);
-      }
+          //  console.log(wrongLettter);
+      // }
     }
   }
-
+  // console.log("Guesses left: " + guessesLeft);
   //Main
   //___________________________________________________________________________________________
 
