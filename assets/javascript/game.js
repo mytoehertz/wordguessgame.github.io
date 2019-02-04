@@ -164,7 +164,9 @@ const celestial_bodies = [
     guessesLeft = 6;
     //HTML
     document.getElementById("guesses-left").textContent = guessesLeft;
-  }
+  } 
+
+
   //Function for winning or losing, lives in the onkeyup function
   function winLose() {
       if(winCounter === randName.length){
@@ -199,7 +201,8 @@ const celestial_bodies = [
         }
       } else { //Checks if guess is already in wrongAnswer, pushes the wrong letter choices in the wrongLetter array
         for(var i = 0; i < randName.length; i ++){
-          if(userGuesses.indexOf(wrongLettter) > -1){
+          if(userGuesses.indexOf(wrongLettter) > -1)
+          {
             wrongLettter.push(userGuesses);
             document.getElementById("wrong-letters").textContent = wrongLettter.join(" ");
             guessesLeft--;
@@ -217,3 +220,4 @@ const celestial_bodies = [
   // object.onclick = startGame();
   document.getElementById("wins").textContent = wins;
   document.getElementById("loses").textContent = loss;
+  document.getElementById("guesses-left").textContent = guessesLeft;
