@@ -206,8 +206,9 @@ const celestial_bodies = [
             wrongLettter.push(userGuesses);
             document.getElementById("wrong-letters").textContent = wrongLettter.join(" ");
             guessesLeft--;
+            winLose();
           }    
-          winLose();
+          
         //   console.log(wrongLettter);
       }
     }
