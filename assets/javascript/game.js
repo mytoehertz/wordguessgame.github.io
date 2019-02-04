@@ -154,10 +154,9 @@ const celestial_bodies = [
         //Assign the Name key from random object to randName
     randName = randWord.Name;
         //Random Facts return
-    hint = randWord[Math.floor(Math.random() *randWord.length)];
-    hint = randWord.RandomFact;
+    
 
-    console.log(randHint);
+    // console.log(randHint);
     // return hint;
         // console.log(randName);
     for(var i = 0; i < randName.length; i ++) {
@@ -178,6 +177,8 @@ const celestial_bodies = [
   //Function to get random hints 
 
   function displayHint() {
+    hint = randWord[Math.floor(Math.random() *randWord.length)];
+    hint = randWord.RandomFact;
     randHint = hint[Math.floor(Math.random() *hint.length)];
     var p = document.getElementById("paragraph");
     p.style.display = "block";  
@@ -189,12 +190,12 @@ const celestial_bodies = [
   function winLose() {
       if(winCounter === randName.length){
           alert("Winner!!!!!!")
-          startGame();
+          
           wins++;
           underScore = [];
       } else if (guessesLeft < 1){
           alert("You lose!")
-          startGame();
+          
           loss--;
           
       }
