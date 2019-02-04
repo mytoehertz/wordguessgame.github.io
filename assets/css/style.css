@@ -16,6 +16,7 @@ h1{
 
 h4{
     text-align: center;
+    color: white;
 }
 
 .box {
@@ -43,4 +44,8 @@ header {
     background-size: cover;
     color: white;
 
+}
+#paragraph
+{
+  display:none;
 }
